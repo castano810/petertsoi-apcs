@@ -17,6 +17,7 @@ public class Critters {
         world.add(new Location(7, 8), new Actor());
         world.add(new Location(3, 3), new ChameleonCritter());
         world.add(new Location(6, 2), new RockHound());
+        world.add(new Location(6, 4), new Rock());
         world.show();
 	}
 }
