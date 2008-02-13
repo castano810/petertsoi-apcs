@@ -48,10 +48,13 @@ public class ChameleonCritter extends Critter
 
 			setColor(new Color(red, green, blue));
 		}
-        int r = (int) (Math.random() * n);
+		else
+		{
+			int r = (int) (Math.random() * n);
 
-        Actor other = actors.get(r);
-        setColor(other.getColor());
+			Actor other = actors.get(r);
+			setColor(other.getColor());
+		}
     }
 
     /**
