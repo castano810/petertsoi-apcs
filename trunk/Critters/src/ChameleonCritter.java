@@ -30,7 +30,7 @@ import java.util.ArrayList;
  */
 public class ChameleonCritter extends Critter
 {
-	private static final double DARKENING_FACTOR = 0.05;
+	public static final double DARKENING_FACTOR = 0.05;
 
     /**
      * Randomly selects a neighbor and changes this critter's color to be the
