@@ -1,8 +1,11 @@
+import info.gridworld.actor.*;
+import info.gridworld.grid.Location;
+
 //
 //  Critters.java
 //  Critters
 //
-//  Created by Justin Uang on 2/11/08.
+//  Created by Justin Uang on 2/13/08.
 //  Copyright (c) 2008 __MyCompanyName__. All rights reserved.
 //
 import java.util.*;
@@ -10,7 +13,9 @@ import java.util.*;
 public class Critters {
 
     public static void main (String args[]) {
-        // insert code here...
-        System.out.println("Hello World!");
-    }
+		ActorWorld world = new ActorWorld();
+        world.add(new Location(7, 8), new Actor());
+        world.add(new Location(3, 3), new ChameleonCritter());
+        world.show();
+	}
 }
