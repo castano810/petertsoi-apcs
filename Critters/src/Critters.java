@@ -18,7 +18,7 @@ public class Critters {
         world.add(new Location(3, 3), new ChameleonCritter());
         world.add(new Location(3, 5), new Rock());
         world.add(new Location(3, 4), new ChameleonKid());
-        //world.add(new Location(6, 6), new BlusterCritter());
+        world.add(new Location(6, 6), new BlusterCritter());
         world.add(new Location(6, 4), new Rock());
         world.add(new Location(6, 4), new QuickCrab());
         world.show();
