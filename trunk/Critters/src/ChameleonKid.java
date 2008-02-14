@@ -32,18 +32,19 @@ public class ChameleonKid extends ChameleonCritter {
 			Location front = getLocation().getAdjacentLocation(getDirection());
 			Location back = getLocation().getAdjacentLocation(getDirection() + 180);
 			
-			if (getGrid().isValid(front)
+			if (getGrid().isValid(front))
 			{
 				if(getGrid().get(front) != null)
 				{
 					setColor(getGrid().get(front).getColor());
 				}
 			}
-			if (getGrid().isValid(back)
+			if (getGrid().isValid(back))
 			{
 				if (getGrid().get(back) != null)
 				{
 					setColor(getGrid().get(back).getColor());
+                    
 				}
 			}
 			
