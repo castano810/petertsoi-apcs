@@ -57,7 +57,6 @@ public class QuickCrab extends CrabCritter
                                 locs.add(loc);
                             
                         } else {
-                            System.out.println(loc.getAdjacentLocation(270).getRow() + ", " + loc.getAdjacentLocation(270).getCol());
                             if (getGrid().isValid(loc.getAdjacentLocation(270)) && getGrid().get(loc.getAdjacentLocation(270)) == null)
                                 locs.add(loc); 
                         }
