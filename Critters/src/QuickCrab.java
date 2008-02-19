@@ -42,29 +42,23 @@ public class QuickCrab extends CrabCritter
             if (getGrid().isValid(loc) && getGrid().get(loc) == null){
                 if (Math.abs(getLocation().getRow()-loc.getRow()) != 1 && Math.abs(getLocation().getCol()-loc.getCol()) != 1){
                     if (getLocation().getRow() != loc.getRow()){
-                         System.out.println("Row Change");
                         if (getLocation().getRow() > loc.getRow()){
-                            System.out.println("Move Up");
-                            if (getGrid().isValid(loc.getAdjacentLocation(0)) && getGrid().get(loc.getAdjacentLocation(0)) == null){
+                            if (getGrid().isValid(loc.getAdjacentLocation(180)) && getGrid().get(loc.getAdjacentLocation(180)) == null){
                                 locs.add(loc);
                             }
                         } else {
-                            System.out.print("Move Down");
-                            System.out.println(loc.getAdjacentLocation(180).getRow() + ", " + loc.getAdjacentLocation(180).getCol());
-                            if (getGrid().isValid(loc.getAdjacentLocation(180)) && getGrid().get(loc.getAdjacentLocation(180)) == null){
+                            if (getGrid().isValid(loc.getAdjacentLocation(0)) && getGrid().get(loc.getAdjacentLocation(0)) == null){
                                 locs.add(loc); 
                             }
                         }
                     } else {
-                        System.out.println("Col Change");
                         if (getLocation().getCol() > loc.getCol()){
-                            System.out.print("Move Left ");
+                            if (getGrid().isValid(loc.getAdjacentLocation(90)) && getGrid().get(loc.getAdjacentLocation(90)) == null)
+                                locs.add(loc);
+                            
+                        } else {
                             System.out.println(loc.getAdjacentLocation(270).getRow() + ", " + loc.getAdjacentLocation(270).getCol());
                             if (getGrid().isValid(loc.getAdjacentLocation(270)) && getGrid().get(loc.getAdjacentLocation(270)) == null)
-                                locs.add(loc);
-                        } else {
-                            System.out.println("Move Right");
-                            if (getGrid().isValid(loc.getAdjacentLocation(90)) && getGrid().get(loc.getAdjacentLocation(90)) == null)
                                 locs.add(loc); 
                         }
                     }
