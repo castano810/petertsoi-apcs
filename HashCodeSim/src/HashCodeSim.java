@@ -2,7 +2,7 @@
 //  HashCodeSim.java
 //  HashCodeSim
 //
-//  Created by Justin Uang on 2/21/08.
+//  Created by Peter Tsoi on 2/21/08.
 //
 import java.util.*;
 
@@ -19,5 +19,5 @@ public class HashCodeSim {
 		return new int[10000];
 	}
 	
-	private HashSet<long> UPCs;
+	private HashSet<Long> UPCs;
 }
