@@ -1,9 +1,5 @@
-//
-//  HashCodeSim.java
-//  HashCodeSim
-//
-//  Created by Peter Tsoi on 2/21/08.
-//
+// Authors: Peter Tsoi & Justin Uang
+// HashCodeSim
 
 import java.util.*;
 
