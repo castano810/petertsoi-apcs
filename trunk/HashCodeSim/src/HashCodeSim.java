@@ -29,7 +29,7 @@ public class HashCodeSim {
 	
     private long[] UPCArray;
 	private HashSet<Long> UPCs;
-    private HashSet<int> hashCodes1;
-    private HashSet<int> hashCodes2;
-    private HashSet<int> hashCodes3;
+    private HashSet<Integer> hashCodes1;
+    private HashSet<Integer> hashCodes2;
+    private HashSet<Integer> hashCodes3;
 }
