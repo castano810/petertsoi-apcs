@@ -15,6 +15,7 @@ public class HashCodeSim {
     
     private void hashType1()
     {
+        
     }
     
     private void hashType2()
@@ -27,4 +28,7 @@ public class HashCodeSim {
 	
     private long[] UPCArray;
 	private HashSet<Long> UPCs;
+    private HashSet<int> hashCodes1;
+    private HashSet<int> hashCodes2;
+    private HashSet<int> hashCodes3;
 }
