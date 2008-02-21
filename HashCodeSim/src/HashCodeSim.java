@@ -40,11 +40,11 @@ public class HashCodeSim {
 		{
 			if (i == 0)
 			{
-				longString += generate.nextInt(8) + 2;
+				longString += generate.nextInt(9) + 1;
 			}
 			else
 			{
-				longString += generate.nextInt(9) + 1;
+				longString += generate.nextInt(10);
 			}
 		}
 		
