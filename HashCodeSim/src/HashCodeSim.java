@@ -13,6 +13,7 @@ public class HashCodeSim {
 		UPCs = new HashSet();
 		UPCArray = new long[10000];
 		generateNumbers(10000);
+        hashType1(UPCArray);
 	}
 	
 	private void generateNumbers(int n)
@@ -58,8 +59,36 @@ public class HashCodeSim {
         for (long n : arr)
         {
             // Quint Split
-            int quint1 = (int) n/100000;
-            int quint2 = (int) n-quint1;
+            long quint1 = n/100000;
+            long quint2 = n-(quint1*100000);
+            long code;
+            
+            // Multiply quint1's first two digits with last two of quint2
+            // Multiply quint1's last two digits with first two from quint2
+            // Add together
+            code = (quint1/1000) * (quint2 - (quint2/1000));
+            // Add middle digit from quint1 to middle digit of quint2, multiply by 37, add to #3
+            // Ans%14983
+            code = (code + (37 * (((quint1 - (quint1/1000)*1000)/100) + ((quint2 - (quint2/1000)*1000)/100))))%14983;
+            if (!hashCodes1.add((int)code))
+                collisions++;
+            else
+                buckets++;
+        }
+    }
+    
+    private void hashType2(long[] arr)
+    {
+        int collisions = 0;
+        int buckets = 0;
+        for (long n : arr)
+        {
+            // Quint Split
+            int quint1 = (int) n/100000000;
+            int quint2 = (int) (n-(quint1*100000000))/10000000;
+            int quint3 = (int) (n-(quint2*1000000))/100000;
+            int quint4 = (int) (n-(quint3*10000))/1000;
+            int quint5 = (int) (n-(quint4*100))/10;
             int code;
             
             // Multiply quint1's first two digits with last two of quint2
@@ -74,10 +103,6 @@ public class HashCodeSim {
             else
                 buckets++;
         }
-    }
-    
-    private void hashType2()
-    {
     }
     
     private void hashType3()
