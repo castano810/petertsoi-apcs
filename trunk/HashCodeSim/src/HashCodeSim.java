@@ -5,12 +5,13 @@ import java.util.*;
 
 public class HashCodeSim {
     public static void main (String args[]) {
+	
     }
 	
-	private int[] generateNumbers(int n)
+	private void generateNumbers(int n)
 	{
 		
-		return new int[10000];
+		
 	}
     
     private void hashType1()
