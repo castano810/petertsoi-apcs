@@ -25,9 +25,18 @@ public class HashCodeSim {
     
     private void hashType1(long[] arr)
     {
+        
         for (long n : arr)
         {
+            // Quint Split
+            int quint1 = (int) n/100000;
+            int quint2 = (int) n-quint1;
             
+            // Multiply quint1's first two digits with last two of quint2
+            // Multiply quint1's last two digits with first two from quint2
+            // Add together
+            // Add middle digit from quint1 to middle digit of quint2, multiply by 37, add to #3
+            // Ans%14983
         }
     }
     
