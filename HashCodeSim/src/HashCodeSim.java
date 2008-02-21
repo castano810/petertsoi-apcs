@@ -5,22 +5,50 @@ import java.util.*;
 
 public class HashCodeSim {
     public static void main (String args[]) {
-	
+		HashCodeSim simulator = new HashCodeSim();
     }
+	
+	public HashCodeSim()
+	{
+		UPCs = new HashSet();
+		UPCArray = new long[10000];
+		generateNumbers(10000);
+	}
 	
 	private void generateNumbers(int n)
 	{
-		Random gen = new Random();
-		
 		int addCounter = 0;
-		while (addCounter < 10000)
+		while (addCounter < n)
 		{
-			long newNum = gen.nextLong();
+			Long newNum = generateLong(10);
+			
 			if (UPCs.add(newNum))
 			{
+				System.out.println(newNum);
+				UPCArray[addCounter] = newNum;
 				addCounter++;
 			}
 		}
+	}
+	
+	private Long generateLong(int numDigits)
+	{
+		String longString = "";
+		Random generate = new Random();
+		
+		for (int i = 0; i < numDigits; i++)
+		{
+			if (i == 0)
+			{
+				longString += generate.nextInt(8) + 2;
+			}
+			else
+			{
+				longString += generate.nextInt(9) + 1;
+			}
+		}
+		
+		return new Long(longString);
 	}
     
     private void hashType1(long[] arr)
