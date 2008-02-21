@@ -14,9 +14,12 @@ public class HashCodeSim {
 		
 	}
     
-    private void hashType1()
+    private void hashType1(long[] arr)
     {
-        
+        for (long n : arr)
+        {
+            
+        }
     }
     
     private void hashType2()
