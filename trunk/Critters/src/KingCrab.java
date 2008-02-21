@@ -1,3 +1,7 @@
+// Authors: Justin Uang & Peter Tsoi
+// KingCrab
+// Critters Project
+
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;

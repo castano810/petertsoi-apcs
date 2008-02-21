@@ -1,13 +1,9 @@
+// Authors: Justin Uang & Peter Tsoi
+// Critters Runner
+// Critters Project
+
 import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
-
-//
-//  Critters.java
-//  Critters
-//
-//  Created by Justin Uang on 2/13/08.
-//  Copyright (c) 2008 __MyCompanyName__. All rights reserved.
-//
 import java.util.*;
 
 public class Critters {
@@ -19,8 +15,10 @@ public class Critters {
         world.add(new Location(3, 5), new Rock());
         world.add(new Location(3, 4), new ChameleonKid());
         world.add(new Location(6, 6), new BlusterCritter());
-        world.add(new Location(6, 4), new Rock());
+        world.add(new Location(6, 2), new Rock());
         world.add(new Location(6, 4), new QuickCrab());
+        world.add(new Location(1,1), new Bug());
+        world.add(new Location(3, 2), new KingCrab());
         world.show();
 	}
 }
