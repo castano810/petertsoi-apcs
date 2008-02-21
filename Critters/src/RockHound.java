@@ -1,10 +1,6 @@
-//
-//  RockHound.java
-//  Critters
-//
-//  Created by Peter Tsoi on 2/13/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
-//
+// Authors: Justin Uang & Peter Tsoi
+// RockHound
+// Critters Project
 
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
