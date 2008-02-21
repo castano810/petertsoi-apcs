@@ -25,5 +25,6 @@ public class HashCodeSim {
     {
     }
 	
+    private long[] UPCArray;
 	private HashSet<Long> UPCs;
 }
