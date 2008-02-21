@@ -10,8 +10,17 @@ public class HashCodeSim {
 	
 	private void generateNumbers(int n)
 	{
+		Random gen = new Random();
 		
-		
+		int addCounter = 0;
+		while (addCounter < 10000)
+		{
+			long newNum = gen.nextLong();
+			if (UPCs.add(newNum))
+			{
+				addCounter++;
+			}
+		}
 	}
     
     private void hashType1(long[] arr)
