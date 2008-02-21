@@ -14,6 +14,7 @@ public class HashCodeSim {
 		UPCArray = new long[10000];
 		generateNumbers(10000);
         hashType1(UPCArray);
+        hashType2(UPCArray);
 	}
 	
 	private void generateNumbers(int n)
@@ -25,7 +26,7 @@ public class HashCodeSim {
 			
 			if (UPCs.add(newNum))
 			{
-				System.out.println(newNum);
+				//System.out.println(newNum);
 				UPCArray[addCounter] = newNum;
 				addCounter++;
 			}
@@ -75,6 +76,11 @@ public class HashCodeSim {
             else
                 buckets++;
         }
+        System.out.println("Hash Algorithm #1 ******************");
+        double lf = ((double)buckets)/14983;
+        System.out.println("\t" + buckets + " buckets of 14983 used. Load Factor: " + lf);
+        int cp = (int)((((double)collisions)/((double)14983))*100);
+        System.out.println("\t" + collisions + " buckets contain more than 1 element (collisions) " + cp + "%");
     }
     
     private void hashType2(long[] arr)
@@ -84,25 +90,32 @@ public class HashCodeSim {
         for (long n : arr)
         {
             // Quint Split
-            int quint1 = (int) n/100000000;
-            int quint2 = (int) (n-(quint1*100000000))/10000000;
-            int quint3 = (int) (n-(quint2*1000000))/100000;
-            int quint4 = (int) (n-(quint3*10000))/1000;
-            int quint5 = (int) (n-(quint4*100))/10;
-            int code;
+            long quint1 = n/100000000;
+            long quint2 = (n-(quint1*100000000))/1000000;
+            long quint3 = (n-(quint1*100000000)-(quint2*1000000))/10000;
+            long quint4 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000))/100;
+            long quint5 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000)-(quint4*100));
+            long code;
+            
+            //System.out.println("N: " + n + "\t #1: " + quint1 + "\t #2: " + quint2 + "\t #3: " + quint3 + "\t #4: " + quint4 + "\t #5: " + quint5);
             
             // Multiply quint1's first two digits with last two of quint2
             // Multiply quint1's last two digits with first two from quint2
             // Add together
-            code = (quint1/1000) * (quint2 - (quint2/1000));
+            code = (quint1 * quint3 * quint5) + 7*(quint2 + 31*quint4);
             // Add middle digit from quint1 to middle digit of quint2, multiply by 37, add to #3
             // Ans%14983
-            code = (code + (37 * (((quint1 - (quint1/1000)*1000)/100) + ((quint2 - (quint2/1000)*1000)/100))))%14983;
-            if (!hashCodes1.add((Integer)code))
+            code = code%14983;
+            if (!hashCodes1.add((int)code))
                 collisions++;
             else
                 buckets++;
         }
+        System.out.println("Hash Algorithm #2 ******************");
+        double lf = ((double)buckets)/14983;
+        System.out.println("\t" + buckets + " buckets of 14983 used. Load Factor: " + lf);
+        int cp = (int)((((double)collisions)/((double)14983))*100);
+        System.out.println("\t" + collisions + " buckets contain more than 1 element (collisions) " + cp + "%");
     }
     
     private void hashType3()
