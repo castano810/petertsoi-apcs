@@ -64,12 +64,7 @@ public class HashCodeSim {
             long quint2 = n-(quint1*100000);
             long code;
             
-            // Multiply quint1's first two digits with last two of quint2
-            // Multiply quint1's last two digits with first two from quint2
-            // Add together
             code = (quint1/1000) * (quint2 - (quint2/1000));
-            // Add middle digit from quint1 to middle digit of quint2, multiply by 37, add to #3
-            // Ans%14983
             code = (code + (37 * (((quint1 - (quint1/1000)*1000)/100) + ((quint2 - (quint2/1000)*1000)/100))))%14983;
             if (!hashCodes1.add((int)code))
                 collisions++;
@@ -97,14 +92,7 @@ public class HashCodeSim {
             long quint5 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000)-(quint4*100));
             long code;
             
-            //System.out.println("N: " + n + "\t #1: " + quint1 + "\t #2: " + quint2 + "\t #3: " + quint3 + "\t #4: " + quint4 + "\t #5: " + quint5);
-            
-            // Multiply quint1's first two digits with last two of quint2
-            // Multiply quint1's last two digits with first two from quint2
-            // Add together
             code = (quint1 * quint3 * quint5) + 7*(quint2 + 31*quint4);
-            // Add middle digit from quint1 to middle digit of quint2, multiply by 37, add to #3
-            // Ans%14983
             code = code%14983;
             if (!hashCodes1.add((int)code))
                 collisions++;
