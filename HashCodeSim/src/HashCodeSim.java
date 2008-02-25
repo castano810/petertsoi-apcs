@@ -123,7 +123,7 @@ public class HashCodeSim {
             long code;
             //code = (quint1*37)+(quint4*6)+(quint3/7)-(quint2*91)-(quint5*29);
             code = n;
-            code = code%999999999;
+            code = code&999999999;
             if (!hashCodes1.add((int)code))
                 collisions++;
             else
