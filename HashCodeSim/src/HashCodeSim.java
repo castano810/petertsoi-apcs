@@ -15,6 +15,7 @@ public class HashCodeSim {
 		generateNumbers(10000);
         hashType1(UPCArray);
         hashType2(UPCArray);
+        hashType3(UPCArray);
 	}
 	
 	private void generateNumbers(int n)
@@ -106,8 +107,33 @@ public class HashCodeSim {
         System.out.println("\t" + collisions + " buckets contain more than 1 element (collisions) " + cp + "%");
     }
     
-    private void hashType3()
+    private void hashType3(long[] arr)
     {
+        
+        int collisions = 0;
+        int buckets = 0;
+        for (long n : arr)
+        {
+            // Quint Split
+            long quint1 = n/100000000;
+            long quint2 = (n-(quint1*100000000))/1000000;
+            long quint3 = (n-(quint1*100000000)-(quint2*1000000))/10000;
+            long quint4 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000))/100;
+            long quint5 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000)-(quint4*100));
+            long code;
+            //code = (quint1*37)+(quint4*6)+(quint3/7)-(quint2*91)-(quint5*29);
+            code = n;
+            code = code%999999999;
+            if (!hashCodes1.add((int)code))
+                collisions++;
+            else
+                buckets++;
+        }
+        System.out.println("Hash Algorithm #3 ******************");
+        double lf = ((double)buckets)/14983;
+        System.out.println("\t" + buckets + " buckets of 14983 used. Load Factor: " + lf);
+        int cp = (int)((((double)collisions)/((double)14983))*100);
+        System.out.println("\t" + collisions + " buckets contain more than 1 element (collisions) " + cp + "%");
     }
 	
     private long[] UPCArray;
