@@ -8,8 +8,10 @@
 import java.util.*;
 
 public class PriorityQueues {
-
     public static void main (String args[]) {
-        PriorityQueues pe = new PriorityQueues();
+        /* DoubleQueue doubleq = new DoubleQueue();
+				doubleq.printPriorityQueue(); */
+		BogusQueue bogusq = new BogusQueue();
+		bogusq.printPriorityQueue();
     }
 }
