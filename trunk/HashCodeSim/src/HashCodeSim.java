@@ -12,12 +12,18 @@ public class HashCodeSim {
 	{
 		UPCs = new HashSet();
 		UPCArray = new long[10000];
+		hashConstants = new int[5];
+		hashConstants[0] = 1;
+		hashConstants[1] = 11;
+		hashConstants[2] = 29;
+		hashConstants[3] = 73;
+		hashConstants[4] = 97;
 		generateNumbers(10000);
         hashType1(UPCArray);
         hashType2(UPCArray);
         hashType3(UPCArray);
+		oneMoreHash(UPCArray);
         //hashType1(new long[] {1234567890});
-      
 	}
 	
 	private void generateNumbers(int n)
@@ -200,12 +206,62 @@ public class HashCodeSim {
             System.out.print(hc + ", ");
         System.out.println();
     }
+    
+    private void oneMoreHash(long[] arr)
+    {
+        int collisions = 0;
+        int buckets = 0;
+        loadfactor = new int[14983];
+        hashArr = new int[3];
+        int hci = 0;
+        
+        for (long n : arr)
+        {
+            // Quint Split
+            long quint1 = n/100000000;
+            long quint2 = (n-(quint1*100000000))/1000000;
+            long quint3 = (n-(quint1*100000000)-(quint2*1000000))/10000;
+            long quint4 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000))/100;
+            long quint5 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000)-(quint4*100));
+            long code;
+            
+            code = quint1 * hashConstants[0] + quint2 * hashConstants[1] + quint3 * hashConstants[2] + quint4 * hashConstants[3] + quint5 * hashConstants[4]; 
+            code = code % 14983;
+			if (!oneMoreHashCodes.add((int)code))
+                collisions = 0;
+            else
+                buckets++;
+            
+            loadfactor[(int)code]++; 
+            hashArr[hci] = (int)code;
+            hci++;
+            if (hci == 3)
+                hci=0;
+        }
+        for(int i : loadfactor)
+        {
+            if (i >1){
+                collisions++;
+            }
+        }
+        System.out.println("One More Hash ******************");
+        double lf = ((double)buckets)/14983;
+        System.out.println("\t" + buckets + " buckets of 14983 used. Load Factor: " + lf);
+        int cp = (int)((((double)collisions)/((double)buckets))*100);
+        System.out.println("\t" + collisions + " buckets contain more than 1 element (collisions) " + cp + "%");
+        System.out.print("\tLast 3 Hash Codes: ");
+        for (int hc : hashArr)
+            System.out.print(hc + ", ");
+        System.out.println();
+    }
 	
     private long[] UPCArray;
 	private HashSet<Long> UPCs;
     private HashSet<Integer> hashCodes1 = new HashSet(14983);
     private HashSet<Integer> hashCodes2 = new HashSet(14983);
     private HashSet<Integer> hashCodes3 = new HashSet(14983);
+    private HashSet<Integer> oneMoreHashCodes = new HashSet(14983);
     private int[] hashArr;
     private int[] loadfactor;
+	private int hashConstants[];
 }
