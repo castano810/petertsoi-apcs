@@ -169,7 +169,7 @@ public class HashCodeSim {
             long quint5 = (n-(quint1*100000000)-(quint2*1000000)-(quint3*10000)-(quint4*100));
             long code;
             
-            code = (quint5*quint1) + 100*(quint4*quint3) + 1000000*(quint2*quint3);
+            code = (quint5*quint1) + 100*(quint4*quint3) + 1000000*(quint2);
             
             code = code%14983;
             
