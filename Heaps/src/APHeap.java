@@ -9,6 +9,30 @@ public class APHeap<E extends Comparable> {
 	public APHeap()
 	{
 		
+	}
+	
+	public boolean isEmpty()
+	{
+		
+	}
+	
+	public int size()
+	{
+		
+	}
+	
+	public boolean add(E)
+	{
+		
+	}
+	
+	public E removeMin()
+	{
+		
+	}
+	
+	public E peekMin()
+	{
 		
 	}
 }
