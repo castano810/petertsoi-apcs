@@ -5,6 +5,8 @@
 //  Created by Justin Uang and Peter Tsoi
 //
 
+import java.util.*;
+
 public class APHeap<E extends Comparable> {
 	public APHeap()
 	{
