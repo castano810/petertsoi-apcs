@@ -8,13 +8,12 @@
 public class APHeap<E extends Comparable> {
 	public APHeap()
 	{
-		heapArray = new Object[100];
+		heapArray = new ArrayList<E>();
 	}
 	
 	public boolean isEmpty()
 	{
-		
-		return false;
+		return heapArray.get(0) == null;
 	}
 	
 	public int size()
@@ -38,5 +37,5 @@ public class APHeap<E extends Comparable> {
 		return null;
 	}
 	
-	private Object[] heapArray;
+	private ArrayList<E> heapArray;
 }
