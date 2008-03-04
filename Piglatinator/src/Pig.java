@@ -97,7 +97,13 @@ public class Pig {
 	
 	// Splits the string into words
 	public static void splitWords (){
-		String[] words = new String[spaces + 1];
+        String[]words;
+        if (originalString.indexOf(" ")>0){
+            words = new String[spaces + 1];
+        }
+        else{
+            words = new String[spaces + 2];
+        }
 		String inString = originalString;
 		int spaceLocation = 0;
 		int cutindicator = 0;
@@ -111,7 +117,8 @@ public class Pig {
 		cutindicator = spaceLocation++;
 		loops = i;
 		}
-		words[loops+1] = inString.substring(cutindicator, wordLength + 1).trim();
+            words[loops+1] = inString.substring(cutindicator, wordLength + 1).trim();
+        
 		originalWords = words;
 		reqLoops = loops+1;
 	}
@@ -123,6 +130,7 @@ public class Pig {
 		int vowelPosition;
 		String holder1;
 		for (String word: originalWords){
+            if (word!=null){
 			length = word.length() - 1;
 			// If it starts lowercase
 			if (word.substring(0, 1).toLowerCase().equals(word.substring(0, 1))){
@@ -161,6 +169,7 @@ public class Pig {
 				}
 			}
 		myCounter++;
+            }
 		}
 		finalWords = newWords;
 	}
