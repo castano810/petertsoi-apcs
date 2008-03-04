@@ -29,12 +29,12 @@ public class APHeap<E extends Comparable> {
 		return false;
 	}
 	
-	public E removeMin()
+	public E removeMax()
 	{
 		return null;
 	}
 	
-	public E peekMin()
+	public E peekMax()
 	{
 		return null;
 	}
