@@ -35,4 +35,6 @@ public class APHeap<E extends Comparable> {
 	{
 		
 	}
+	
+	private E[] heapArray;
 }
