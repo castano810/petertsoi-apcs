@@ -1,10 +1,7 @@
-//
-//  Heaps.java
-//  Heaps
-//
-//  Created by Justin Uang on 3/4/08.
-//  Copyright (c) 2008 __MyCompanyName__. All rights reserved.
-//
+//  Heaps: Of stuff to do
+//  Authors: Justin & Peter
+
+
 import java.util.*;
 
 public class Heaps {
