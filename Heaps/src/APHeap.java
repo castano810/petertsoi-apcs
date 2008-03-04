@@ -20,7 +20,7 @@ public class APHeap<E extends Comparable> {
 	
 	public int size()
 	{
-		return -1;
+		return heapArray.size();
 	}
 	
 	public boolean add(E object)
