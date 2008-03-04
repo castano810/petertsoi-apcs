@@ -21,7 +21,7 @@ public class APHeap<E extends Comparable> {
 		
 	}
 	
-	public boolean add(E)
+	public boolean add(E object)
 	{
 		
 	}
