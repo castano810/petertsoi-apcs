@@ -24,6 +24,13 @@ public class Heaps {
 			aBigHeap.add(ip);
 			ip = myNumSource.nextItemPair();
 		}
-		aBigHeap.dumpToTree();
+		
+		Iterator iter = aBigHeap.getIterator();
+		int i = 0;
+		while (iter.hasNext() && i < 10)
+		{
+			System.out.println(iter.next());
+			i++;
+		}
     }
 }
