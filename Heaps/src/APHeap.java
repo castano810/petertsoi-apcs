@@ -53,15 +53,38 @@ public class APHeap<E extends Comparable> {
 			//System.out.println();
 		}
 	}
+    
+    public void reHeapDown(int tempIndex)
+	{
+		if ((tempIndex*2)+2 < heapArray.size()){
+            System.out.println("Moving to: " + ((tempIndex*2)+2) + " From: " + tempIndex);
+            reHeapDown((tempIndex*2)+2);
+        }
+        
+        if ((tempIndex*2)+1 < heapArray.size()){
+            System.out.println("Moving to: " + ((tempIndex*2)+1) + " From: " + tempIndex);
+            reHeapDown((tempIndex*2)+1);
+        }
+        
+        reHeap(tempIndex, heapArray.get(tempIndex));
+	}
 	
 	public E removeMax()
 	{
-		return null;
+        E object = heapArray.get(0);
+        int objIndex = 0;
+        while ((objIndex*2)+2 < heapArray.size()) {
+            heapArray.set(objIndex, heapArray.get((objIndex*2)+2));
+            objIndex = (objIndex*2)+2;
+        }
+        heapArray.remove(objIndex);
+        reHeapDown(0);
+		return object;
 	}
 	
 	public E peekMax()
 	{
-		return null;
+		return heapArray.get(0);
 	}
 	
 	public String toString()
