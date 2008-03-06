@@ -26,34 +26,36 @@ public class APHeap<E extends Comparable> {
 	public boolean add(E object)
 	{
 		heapArray.add(object);
-		reHeap(heapArray.size(), object);
+		reHeap(heapArray.size() - 1, object);
 		
 		
 		
 		return false;
 	}
-	public void reHeap(int index, E object)
+	public void reHeap(int tempIndex, E object)
 	{
-		int originalSize = index;
-		int tempIndex = originalSize;
-		E parent = null;
+		E parent = heapArray.get((tempIndex - 1) / 2);
 		while (object.compareTo(parent) > 0 && tempIndex != -1)
 		{
+			System.out.println("Swap: " + object + "\tWith: "+ parent);
 			System.out.println("Before Swap");
+			System.out.println(tempIndex);
 			dumpToTree();
-			parent = heapArray.get((tempIndex - 1) / 2);
+			
 			E temp = parent;
-			heapArray.set((originalSize - 1) / 2, object);
-			heapArray.set(originalSize, temp);
+			heapArray.set((tempIndex - 1) / 2, object);
+			heapArray.set(tempIndex, temp);
 			if (tempIndex == 0)
 			{
 			   tempIndex = -1;
 			}
 			else
 			{
-			   tempIndex = (tempIndex - 1) / 2;
-			   originalSize = tempIndex;
+				tempIndex = (tempIndex - 1) / 2;
+				parent = heapArray.get((tempIndex - 1) / 2);
 			}
+			System.out.println();
+			System.out.println();
 		}
 	}
 	
