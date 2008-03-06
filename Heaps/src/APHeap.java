@@ -38,8 +38,6 @@ public class APHeap<E extends Comparable> {
 		while (object.compareTo(parent) > 0 && tempIndex != -1)
 		{
 			System.out.println("Swap: " + object + "\tWith: "+ parent);
-			System.out.println("Before Swap");
-			System.out.println(tempIndex);
 			dumpToTree();
 			
 			E temp = parent;
@@ -54,7 +52,6 @@ public class APHeap<E extends Comparable> {
 				tempIndex = (tempIndex - 1) / 2;
 				parent = heapArray.get((tempIndex - 1) / 2);
 			}
-			System.out.println();
 			System.out.println();
 		}
 	}
