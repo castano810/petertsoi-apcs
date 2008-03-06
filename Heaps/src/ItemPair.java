@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class ItemPair extends Object
+public class ItemPair extends Object implements Comparable
     {
     public ItemPair(StreamTokenizer parser) throws IOException
         {
@@ -29,10 +29,37 @@ public class ItemPair extends Object
                 }
             }
         }
-    public int heapValue()
-	{
-	return 50000 - first;
-	}
+		public ItemPair(int first, int second)
+		{
+			this.first = first;
+			this.second = second;
+		}
+		public int heapValue()
+		{
+			return 50000 - first;
+		}
+		
+		public int compareTo(Object other)
+		{
+			if (((ItemPair)other).heapValue() > heapValue())
+			{
+				return -1;
+			}
+			if (((ItemPair)other).heapValue() < heapValue())
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		
+		public String toString()
+		{
+			return "First: " + first + "\tSecond: " + second;
+		}
+		
     public int getFirst()
         {
         return first;
