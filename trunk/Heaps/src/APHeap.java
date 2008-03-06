@@ -121,5 +121,10 @@ public class APHeap<E extends Comparable> {
 		System.out.println();
 	}
 	
+	public Iterator getIterator()
+	{
+		return heapArray.iterator();
+	}
+	
 	private ArrayList<E> heapArray;
 }
