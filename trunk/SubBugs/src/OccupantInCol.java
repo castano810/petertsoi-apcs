@@ -19,12 +19,12 @@ public class OccupantInCol {
 	
 	public Object getOccupant()
 	{
-		return null;
+		return occupant;
 	}
 	
 	public int getCol()
 	{
-		return -1;
+		return col;
 	}
 	
 	public void setOccupant(Object newOccupant)
