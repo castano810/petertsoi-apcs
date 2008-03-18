@@ -13,7 +13,9 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
             throw new IllegalArgumentException("cols <= 0");
         
         occupantArray = new ArrayList<LinkedList<OccupantInCol>>();
-        
+        for (int i = 0; i < rows; i++) {
+            occupantArray.set(i, null);
+        }
     }
     
     public ArrayList<Location> getOccupiedLocations()
