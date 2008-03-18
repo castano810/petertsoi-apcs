@@ -7,7 +7,7 @@ public class SubBugs
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
-        world.addGridClass("SparseBoundedGrid2");
+        world.addGridClass("info.gridworld.grid.SparseBoundedGrid2");
         world.add(new Bug());
         world.add(new CowardBug());
         world.add(new CryptoBug());
