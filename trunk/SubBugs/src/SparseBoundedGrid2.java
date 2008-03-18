@@ -17,7 +17,7 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
         occupantArray = new ArrayList< LinkedList<OccupantInCol> >();
 
         for (int i = 0; i < rows; i++) {
-            occupantArray.set(i, null);
+            occupantArray.add(new LinkedList<OccupantInCol>());
         }
     }
     
