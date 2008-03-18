@@ -12,7 +12,7 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
         if (cols <= 0)
             throw new IllegalArgumentException("cols <= 0");
         
-        occupantArray = new ArrayList<LinkedList<E>>();
+        occupantArray = new ArrayList<LinkedList<OccupantInCol>>();
         
     }
     
@@ -49,5 +49,5 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 		return 0;
 	}
     
-    private ArrayList<LinkedList<E>> occupantArray;
+    private ArrayList<LinkedList<OccupantInCol>> occupantArray;
 }
