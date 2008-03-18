@@ -46,7 +46,7 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
     }
     
     public boolean isValid(Location loc){
-        return true;
+        return (loc.getRow() < rows) && (loc.getCol() < cols);
     }
 	
 	public int getNumRows()
