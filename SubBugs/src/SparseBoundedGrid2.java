@@ -6,6 +6,8 @@
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-public class SparseBoundedGrid2 {
+package info.gridworld.grid;
+
+public class SparseBoundedGrid2 extends AbstractGrid {
 
 }
