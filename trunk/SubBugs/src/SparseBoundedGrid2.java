@@ -5,7 +5,17 @@ package info.gridworld.grid;
 
 import java.util.*;
 
-public class SparseBoundedGrid2<E> extends AbstractGrid {
+public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
+    public SparseBoundedGrid2(int rows, int cols){
+        if (rows <= 0)
+            throw new IllegalArgumentException("rows <= 0");
+        if (cols <= 0)
+            throw new IllegalArgumentException("cols <= 0");
+        
+        occupantArray = new ArrayList<LinkedList>();
+        
+    }
+    
     public ArrayList<Location> getOccupiedLocations()
     {
         ArrayList<Location> locs = new ArrayList<Location>();
@@ -38,4 +48,6 @@ public class SparseBoundedGrid2<E> extends AbstractGrid {
 	{
 		return 0;
 	}
+    
+    private ArrayList<LinkedList> occupantArray;
 }
