@@ -11,8 +11,11 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
             throw new IllegalArgumentException("rows <= 0");
         if (cols <= 0)
             throw new IllegalArgumentException("cols <= 0");
-        
-        occupantArray = new ArrayList<LinkedList<OccupantInCol>>();
+		this.rows = rows;
+		this.cols = cols;
+		
+        occupantArray = new ArrayList< LinkedList<OccupantInCol> >();
+
         for (int i = 0; i < rows; i++) {
             occupantArray.set(i, null);
         }
@@ -34,7 +37,10 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
     }
     
     public E put(Location loc, Object obj){
-        return null;
+        LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
+		currentRow.add(new OccupantInCol(obj, loc.getCol()));
+		
+		return (E) obj;
     }
     
     public boolean isValid(Location loc){
@@ -52,4 +58,5 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 	}
     
     private ArrayList<LinkedList<OccupantInCol>> occupantArray;
+	private int rows, cols;
 }
