@@ -25,7 +25,7 @@ public class OccupantInCol {
 		occupant = newOccupant;
 	}
 	
-	public void setCol(Object newCol)
+	public void setCol(int newCol)
 	{
 		col = newCol;
 	}
