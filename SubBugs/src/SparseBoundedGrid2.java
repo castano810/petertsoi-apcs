@@ -3,7 +3,6 @@
 
 package info.gridworld.grid;
 
-
 import java.util.*;
 
 public class SparseBoundedGrid2<E> extends AbstractGrid {
@@ -29,4 +28,14 @@ public class SparseBoundedGrid2<E> extends AbstractGrid {
     public boolean isValid(Location loc){
         return true;
     }
+	
+	public int getNumRows()
+	{
+		return 0;
+	}
+	
+	public int getNumCols()
+	{
+		return 0;
+	}
 }
