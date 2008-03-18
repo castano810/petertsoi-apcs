@@ -11,6 +11,12 @@ public class OccupantInCol {
 	private Object occupant;
 	private int col;
 	
+	public OccupantInCol(Object occupant, int col)
+	{
+		this.occupant = occupant;
+		this.col = col;
+	}
+	
 	public Object getOccupant()
 	{
 		return null;
