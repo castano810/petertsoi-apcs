@@ -1,13 +1,32 @@
-//
-//  SparseBoundedGrid2.java
-//  SubBugs
-//
-//  Created by Peter Tsoi on 3/18/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
-//
+// SparseBoundedGrid with LinkedLists
+// Peter Tsoi & Justin Uang
 
 package info.gridworld.grid;
 
-public class SparseBoundedGrid2 extends AbstractGrid {
 
+import java.util.*;
+
+public class SparseBoundedGrid2<E> extends AbstractGrid {
+    public ArrayList<Location> getOccupiedLocations()
+    {
+        ArrayList<Location> locs = new ArrayList<Location>();
+            
+        return locs;
+    }
+    
+    public E get(Location loc){
+        return null;
+    }
+    
+    public E remove(Location loc){
+        return null;
+    }
+    
+    public E put(Location loc, Object obj){
+        return null;
+    }
+    
+    public boolean isValid(Location loc){
+        return true;
+    }
 }
