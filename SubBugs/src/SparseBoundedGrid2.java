@@ -40,18 +40,37 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
     
     public E get(Location loc){
         LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
-		return (E) currentRow.get(loc.getCol()).getOccupant();
+		for (OccupantInCol occInCol : currentRow)
+		{
+			if (occInCol.getCol() == loc.getCol()){
+				return (E) occInCol.getOccupant();
+			}
+		}
+		System.out.println("TEST");
+		return null;
     }
     
     public E remove(Location loc){
         LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
-		return (E) currentRow.remove(loc.getCol());
+		for (int i = 0; i < currentRow.size(); i++)
+		{
+			ListIterator it = currentRow.listIterator();
+			while (it.hasNext())
+			{
+				if (((OccupantInCol)it.next()).getCol() == loc.getCol())
+				{
+					it.remove();
+					return (E) ((OccupantInCol)it.next()).getOccupant();
+				}
+			}
+		}
+		return null;
+		
     }
     
     public E put(Location loc, Object obj){
         LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
-		currentRow.add(loc.getCol(), new OccupantInCol(obj, loc.getCol()));
-		
+		currentRow.add(new OccupantInCol(obj, loc.getCol()));
 		return (E) obj;
     }
     
