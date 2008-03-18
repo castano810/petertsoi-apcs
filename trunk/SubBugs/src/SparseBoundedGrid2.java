@@ -46,7 +46,6 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 				return (E) occInCol.getOccupant();
 			}
 		}
-		System.out.println("TEST");
 		return null;
     }
     
@@ -57,10 +56,11 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 			ListIterator it = currentRow.listIterator();
 			while (it.hasNext())
 			{
-				if (((OccupantInCol)it.next()).getCol() == loc.getCol())
+				OccupantInCol nextCol = (OccupantInCol)it.next();
+				if (nextCol.getCol() == loc.getCol())
 				{
 					it.remove();
-					return (E) ((OccupantInCol)it.next()).getOccupant();
+					return (E) nextCol.getOccupant();
 				}
 			}
 		}
