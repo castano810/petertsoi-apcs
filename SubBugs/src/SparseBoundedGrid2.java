@@ -29,12 +29,13 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
     }
     
     public E get(Location loc){
-        return null;
+        LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
+		return (E) currentRow.get(loc.getCol()).getOccupant();
     }
     
     public E remove(Location loc){
         LinkedList<OccupantInCol> currentRow = occupantArray.get(loc.getRow());
-		return (E) currentRow.get(loc.getCol()).getOccupant();
+		return (E) currentRow.remove(loc.getCol());
     }
     
     public E put(Location loc, Object obj){
@@ -50,12 +51,12 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
 	
 	public int getNumRows()
 	{
-		return 0;
+		return rows;
 	}
 	
 	public int getNumCols()
 	{
-		return 0;
+		return cols;
 	}
     
     private ArrayList<LinkedList<OccupantInCol>> occupantArray;
