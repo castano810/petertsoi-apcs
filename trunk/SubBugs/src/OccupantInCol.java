@@ -5,6 +5,7 @@
 //  Created by Justin Uang on 3/18/08.
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
+package info.gridworld.grid;
 
 public class OccupantInCol {
 	private Object occupant;
