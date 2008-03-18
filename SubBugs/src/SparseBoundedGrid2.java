@@ -24,7 +24,17 @@ public class SparseBoundedGrid2<E> extends AbstractGrid<E> {
     public ArrayList<Location> getOccupiedLocations()
     {
         ArrayList<Location> locs = new ArrayList<Location>();
-            
+        for(int i = 0; i < occupantArray.size(); i++)
+		{
+			LinkedList<OccupantInCol> currentRow = occupantArray.get(i);
+			for (OccupantInCol currentCol : currentRow)
+			{
+				if (currentCol.getOccupant() != null)
+				{
+					locs.add(new Location(i, currentCol.getCol()));
+				}
+			}
+		}
         return locs;
     }
     
