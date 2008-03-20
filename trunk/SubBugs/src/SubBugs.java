@@ -1,3 +1,6 @@
+// SparseBoundedGrid with LinkedLists
+// Peter Tsoi & Justin Uang
+
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Bug;
 import info.gridworld.actor.Rock;
