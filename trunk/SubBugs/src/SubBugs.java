@@ -1,5 +1,6 @@
-// SparseBoundedGrid with LinkedLists
+// Updated for SparseBoundedGrid with LinkedLists
 // Peter Tsoi & Justin Uang
+// SubBugs.java
 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Bug;
