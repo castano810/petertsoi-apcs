@@ -1,5 +1,6 @@
 // SparseBoundedGrid with LinkedLists
 // Peter Tsoi & Justin Uang
+// SparseBoundedGrid.java
 
 package info.gridworld.grid;
 
