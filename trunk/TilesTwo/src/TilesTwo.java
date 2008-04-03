@@ -5,8 +5,6 @@
 //  Date Completed: October 30, 2007
 //  Notes: Main Method / Testing Class
  
- // Peter was here (Dell)
- 
 public class TilesTwo
 {   
     //method that tiles the floor and prints out the results
